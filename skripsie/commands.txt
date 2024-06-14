@@ -1,0 +1,46 @@
+Other useful commands:
+ping -- to see if the PC is on
+who -- to see who are currently logged in
+write -- to chat to another user
+tmux -- create terminals that persist after your SSH session
+____________________________________________________________
+ping ee534617.ee.sun.ac.za
+ssh harry@ee534617.ee.sun.ac.za
+
+viewing graphic cards:
+nvidia-smi
+
+see current logged on users:
+who
+
+determine device:
+def determin_device():
+    device = torch.device("cpu")
+    FloatTensor = torch.FloatTensor
+    if torch.cuda.is_available():
+        device = torch.device("cuda:1")
+        FloatTensor = torch.cuda.FloatTensor
+    return device, FloatTensor
+
+copy things over:
+scp -r -i C:\Users\
+
+
+terminal that created on username and is persistent (continues going unless pc shutdwon):
+tmux new -s test_case
+#then run python3 filename.py
+
+close tmux: (it still persisting.)
+ctrl b + d
+
+reattach to tmux session:
+tmux attach -t test_case
+
+THE COPY COMMAND:
+scp -i C:\Users\Harry\.ssh\jc_msi {filename} {filename} 
+    harry@ee534617.ee.sun.ac.za:~/Documents/skripsie_workspace
+
+so it is source then destination
+scp -i
+
+scp -r /mnt/e/SKRIPSIE/Skripsie/* harry@ee534617.ee.sun.ac.za:~/Documents/skripsie_workspace/
